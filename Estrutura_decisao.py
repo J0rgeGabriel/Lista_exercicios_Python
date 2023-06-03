@@ -1,4 +1,4 @@
-# 1. Faça um Programa que peça dois números e imprima o maior deles:
+'''# 1. Faça um Programa que peça dois números e imprima o maior deles:
 
 n1 = float(input("Informe o primeiro número: ").replace(",", "."))
 n2 = float(input("Informe o segundo número: ").replace(",", "."))
@@ -222,4 +222,65 @@ while True:
                     "6 - Sexta-feira\n"
                     "7 - Sábado\n")
         print()
-        continue
+        continue'''
+
+# 14. Faça um programa que lê as duas notas parciais obtidas por um aluno numa disciplina ao longo de um semestre, e calcule a sua média.
+# A atribuição de conceitos obedece à tabela abaixo:
+# Entre 9.0 e 10.0 (A)
+# Entre 7.5 e 9.0 (B)
+# Entre 6.0 e 7.5 (C)
+# Entre 4.0 e 6.0 (D)
+# Entre 4.0 e zero (E)
+
+materias = {
+    "1": "Matemática",
+    "2": "Português",
+    "3": "História",
+    "4": "Geografia",
+    "5": "Ciências",
+    "6": "Física",
+    "7": "Química",
+    "8": "Biologia",
+    "9": "Inglês"
+}
+
+while True:
+    print()
+    materia = input("1 - Matemática\n"
+                    "2 - Português\n"
+                    "3 - História\n"
+                    "4 - Geografia\n"
+                    "5 - Ciências\n"
+                    "6 - Física\n"
+                    "7 - Química\n"
+                    "8 - Biologia\n"
+                    "9 - Inglês\n"
+                    "0 - Encerrar o programa\n"
+                    "Digite um número referente à matéria que você deseja saber a média: ")
+    print()
+
+    if materia == "0":
+        print("Programa encerrado...")
+        break
+
+    elif materia in ("1", "2", "3", "4", "5", "6", "7", "8", "9"):
+        n1 = float(input(f"Informe a sua primeira nota na prova de {materias[materia]}: "))
+        n2 = float(input(f"Informe a sua segunda nota na prova de {materias[materia]}: "))
+        media = (n1 + n2) / 2
+
+        if media >= 9:
+            conceito = "A"
+        elif media >= 7.5:
+            conceito = "B"
+        elif media >= 6.5:
+            conceito = "C"
+        elif media >= 4:
+            conceito = "D"
+        else:
+            conceito = "E"
+
+        print(f"O conceito da sua média foi de ({conceito})")
+
+    else:
+        print("Valor inválido! Por favor, digite um número válido referente à matéria.")
+
